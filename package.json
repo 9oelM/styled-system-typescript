@@ -1,0 +1,17 @@
+{
+  "name": "styled-system-ts",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "repository": "https://github.com/9oelM/styled-system-ts.git",
+  "author": "9oelM <hj923@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.53",
+    "@types/styled-components": "^5.1.4",
+    "react": "^17.0.1",
+    "typescript": "^4.0.3"
+  }
+}

@@ -1,9 +1,3 @@
-# styled-system-ts
-Typescript-only styled system solution
-
-# Example
-
-```ts
 import React from "react";
 import styled from 'styled-components';
 import { WithSpecifiedStyles, identity, GetStylesFrom, Identity, PickStyles } from '.';
@@ -57,10 +51,7 @@ export default function App() {
       <TestButton2 background="#842414" margin="51px" width={100}>
         Hi2
       </TestButton2>
-      <TestButton3 height={400}>
-        Hi3
-      </TestButton3>
+      <TestButton3>Hi3</TestButton3>
     </>
   );
 }
-```
