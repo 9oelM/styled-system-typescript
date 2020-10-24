@@ -1,19 +1,19 @@
 import React from "react";
 import styled from 'styled-components';
-import { WithSpecifiedStyles, identity, GetStylesFrom, Identity, PickStyles } from '.';
+import { WithSpecifiedStyles, withSpecifiedStyles, GetStylesFrom, PickStyles, Identity } from '.';
 
 const withMarginAndWidth: WithSpecifiedStyles<
   "margin" | "width" | "height"
-> = identity;
+> = withSpecifiedStyles();
 
-const withBackground: WithSpecifiedStyles<"background"> = identity;
+const withBackground: WithSpecifiedStyles<"background"> = withSpecifiedStyles();
 
 type BackgroundMarginWidth = GetStylesFrom<typeof withBackground> &
   GetStylesFrom<typeof withMarginAndWidth>;
 
 type WithBackgroundMarginWidth = Identity<BackgroundMarginWidth>;
 
-const withBackgroundMarginWidth: WithBackgroundMarginWidth = identity;
+const withBackgroundMarginWidth: WithBackgroundMarginWidth = withSpecifiedStyles();
 
 const TestButton = styled.button(
   {
@@ -22,6 +22,10 @@ const TestButton = styled.button(
   },
   withBackgroundMarginWidth
 );
+
+const Test = styled.button`
+  ${withBackground}
+`
 
 const TestButton2 = styled.button(
   {

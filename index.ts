@@ -2,9 +2,7 @@ import { CSSProperties } from "styled-components";
 
 export type Identity<Self = any> = (x: Self) => Self;
 
-export function identity<Self>(x: Self): Self {
-  return x;
-}
+export const withSpecifiedStyles: <Self>() => Identity<Self> = () => (x) => x;
 
 export type WithSpecifiedStyles<
   Styles extends keyof CSSProperties = keyof CSSProperties
