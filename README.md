@@ -1,6 +1,12 @@
 # @9oelm/styled-system-typescript
 Typescript-only styled system solution
 
+```
+npm i @9oelm/styled-system-typescript
+
+yarn add @9oelm/styled-system-typescript
+```
+
 ## Rationale
 Sometimes you want to dynamically adjust styles of a component made from `styled-component` by injecting custom styles. If you are using typescript, this would help you achieve that without any additional javascript. It is only done with typescript.
 
