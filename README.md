@@ -1,12 +1,47 @@
-# styled-system-ts
+# @9oelm/styled-system-typescript
 Typescript-only styled system solution
 
-# Example
+## Rationale
+Sometimes you want to dynamically adjust styles of a component made from `styled-component` by injecting custom styles. If you are using typescript, this would help you achieve that without any additional javascript. It is only done with typescript.
+
+## API
+
+`Identity` and `identity`: 
+```typescript
+type Identity<Self = any> = (x: Self) => Self;
+
+function identity<Self>(x: Self): Self {
+  return x;
+}
+```
+
+`WithSpecifiedStyles`: 
+```typescript
+type WithSpecifiedStyles<
+  Styles extends keyof CSSProperties = keyof CSSProperties
+> = Identity<{ [K in Styles]?: string | number }>;
+```
+
+`PickStyles`:
+```typescript
+type PickStyles<Styles extends keyof CSSProperties = keyof CSSProperties> = {
+  [K in Styles]?: string | number;
+};
+```
+
+`GetStylesFrom`:
+```typescript
+type GetStylesFrom<
+  WithSpecifiedStyleFn extends WithSpecifiedStyles
+> = ReturnType<WithSpecifiedStyleFn>;
+```
+
+## Example
 
 ```ts
 import React from "react";
 import styled from 'styled-components';
-import { WithSpecifiedStyles, identity, GetStylesFrom, Identity, PickStyles } from '.';
+import { WithSpecifiedStyles, identity, GetStylesFrom, Identity, PickStyles } from '@9oelm/styled-system/typescript';
 
 const withMarginAndWidth: WithSpecifiedStyles<
   "margin" | "width" | "height"
