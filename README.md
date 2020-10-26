@@ -11,7 +11,7 @@ yarn add @9oelm/styled-system-typescript
 
 ```ts
 import styled from 'styled-components'
-import { WithSpecifiedStyles } from '@9oelm/styled-system-typescript'
+import { PickStyles } from '@9oelm/styled-system-typescript'
  
 const Box = styled.div(
   {
@@ -29,7 +29,7 @@ const MyComponent = () => {
 ```
 
 ## Rationale
-Sometimes you want to dynamically adjust styles of a component made from `styled-component` by injecting custom styles. If you are using typescript, this would help you achieve that without any additional javascript. It is only done with typescript.
+Sometimes you want to dynamically adjust styles of a component made from `styled-component` by injecting custom styles. If you are using typescript, this would help you achieve that without any additional javascript. It is only done with typescript _typings_.
 
 ## API
 
